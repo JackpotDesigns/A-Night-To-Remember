@@ -1,0 +1,31 @@
+
+/* Variable with global scope #37465b,#212b38*/
+
+/* Color stop is where the transition starts */
+:root{ --background_sun_gradient:radial-gradient(ellipse at bottom, #210b01, #0f0600 45%);} 
+
+html{
+  background: var(--background_sun_gradient) no-repeat center fixed;
+  background-size: cover;
+  font-size: 100%;
+  color: #fff;
+}
+
+
+/* Horizontal centering by margin auto + left/right 0 */
+/* Vertical centering will only center towards its top boundary, bring it back up 1/2 its height */
+#title{
+  position: absolute;
+  font-family: 'Sofia';
+  font-size: 5rem;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform:translatey(-50%);
+}
+
+.wrapper{
+  background-color: aqua;
+}
+
