@@ -1,22 +1,23 @@
 
-/* Variable with global scope #37465b,#212b38*/
+/* Importing the stars css from stars.css */
+@import url(stars.css);
 
 /* Color stop is where the transition starts */
-:root{ --background_sun_gradient:radial-gradient(ellipse at bottom, #210b01, #0f0600 45%);} 
+:root{ --background_sun_gradient:radial-gradient(ellipse at bottom, #4e4b4b, #0f0600 61%);} 
 
 html{
   background: var(--background_sun_gradient) no-repeat center fixed;
   background-size: cover;
   font-size: 100%;
   color: #fff;
+  height: 100%;
 }
-
 
 /* Horizontal centering by margin auto + left/right 0 */
 /* Vertical centering will only center towards its top boundary, bring it back up 1/2 its height */
 #title{
   position: absolute;
-  font-family: 'Sofia';
+  font-family: 'Poppins';
   font-size: 5rem;
   text-align: center;
   left: 0;
@@ -25,7 +26,12 @@ html{
   transform:translatey(-50%);
 }
 
-.wrapper{
-  background-color: aqua;
+#title span{
+  background: -webkit-linear-gradient(#0f0600,#7a7a7a);
+  /* Background behind the text */ 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
