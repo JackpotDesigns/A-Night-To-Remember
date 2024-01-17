@@ -13,6 +13,9 @@ html{
   height: 100%;
 }
 
+body{
+  height: 100%;
+}
 /* Horizontal centering by margin auto + left/right 0 */
 /* Vertical centering will only center towards its top boundary, bring it back up 1/2 its height */
 #title{
