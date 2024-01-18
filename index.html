@@ -13,6 +13,9 @@
       
         <!--- custom css link-->
         <link rel="stylesheet" href="./assets/css/style.css">
+
+        <!-- Linking my javascript file to this css file-->
+        <script src="shooting_star.js"></script>
       
         <!-- preconnect tells browser that you intend to connect to these as quick as possible -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,11 +29,20 @@
     <!--Main content of the body-->
     <body>
         <section class = 'wrapper'>
+
+            <!--Stars-->
             <div id = 'stars'></div>
             <div id = 'title'>
                 <span>
                     A Night to Remember
                 </span>
+            </div>
+
+            <!--Meteor-->
+            <div class="meteor-cont"> 
+                <div class="meteor-ani"> 
+                    <div id="meteor"></div>
+                </div>
             </div>
         </section>
     </body>
