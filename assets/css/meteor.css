@@ -1,0 +1,93 @@
+/* Color stop is where the transition starts */
+/* Native Variables, We can use these without the need to preprocess, when values change browser repaints them */
+:root{ 
+  --meteor_gradient:linear-gradient(to top, #fff 0%, transparent 100%);
+
+  /* Here are the random variables I want to change */
+  --random_top:0;
+  --random_left:0;
+  --random_translate_x:0;
+  --random_translate_y:0;
+  --random_right:0;
+
+  /* This can be completely random 0 - 360 */
+  --random_rotate:60deg;
+} 
+
+
+#meteor-cont{
+
+  /* Absolute so doesn't get in the way */
+  position: absolute;
+
+  /* We want this values random */
+  /* top: var(--random_top); */
+  left:0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Cannot use two seperate transform functions */
+  transform: translate(var(--random_translate_x), var(--random_translate_y)) rotate(var(--random_rotate)); 
+
+  height: 200%;
+  top:0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 10%;
+
+  /* How elements in the container will be treated */
+  display: flex;
+  justify-content: center;
+ }  
+
+#meteor-ani{ 
+  /* Becomes Positioned, effects children */
+  position: relative;
+
+  /* Inherrited 10% from parent */
+  width: 10%;
+
+  display: flex;
+  justify-content: center; 
+  animation: meteor 1s linear infinite normal;
+  /* animation: meteor 1s linear infinite normal,
+  delay-animation 20s linear infinite; */
+ } 
+  
+
+ #meteor-cont #meteor{
+  /* H+W of actual meteor */
+  height: 12vh;
+  width: 2px;
+  background: var(--meteor_gradient);
+  border-radius: 50% 50% 25% 25%;
+  opacity: .7;
+}
+
+/* @keyframes delay-animation {
+  0% {
+    opacity: 0;
+  }
+  94.99%{
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+@keyframes meteor {
+  0%
+  {
+      transform: translateY(0%);
+  }
+  100%
+  {
+      transform: translateY(100%);
+  } 
+}

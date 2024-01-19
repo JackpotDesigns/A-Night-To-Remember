@@ -1,12 +1,12 @@
 
 /* Importing the stars css from stars.css */
 @import url(stars.css);
+@import url(meteor.css);
 
 /* Color stop is where the transition starts */
 /* Native Variables, We can use these without the need to preprocess, when values change browser repaints them */
 :root{ 
   --background_moon_gradient:radial-gradient(ellipse at bottom, #4e4b4b, #0f0600 61%);
-  --meteor_gradient:linear-gradient(to top, #fff 0%, transparent 100%);
 } 
 
 html{
@@ -19,6 +19,7 @@ html{
 
 body{
   height: 100%;
+  margin:0;
 }
 /* Horizontal centering by margin auto + left/right 0 */
 /* Vertical centering will only center towards its top boundary, bring it back up 1/2 its height */
@@ -39,73 +40,4 @@ body{
   /* Background behind the text */ 
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.meteor-cont{
-
-  /* Absolute so doesn't get in the way */
-  position: absolute;
-
-  /* We want this values random */
-  top: 0%;
-  left: 10%;
-  /* Cannot use two seperate transform functions */
-  transform: translate(0, -20%) rotate(45deg); 
-
-  height: 100%;
-  width: 10%;
-
-  /* How elements in the container will be treated */
-  display: flex;
-  justify-content: center;
- }  
-
-.meteor-ani{ 
-  /* Becomes Positioned, effects children */
-  position: relative;
-
-  /* Inherrited 10% from parent */
-  width: 10%;
-
-  display: flex;
-  justify-content: center; 
-  animation: meteor 1s linear infinite normal,
-  delay-animation 20s linear infinite;
- } 
-  
-
- .meteor-cont #meteor{
-  /* H+W of actual meteor */
-  height: 12vh;
-  width: 2px;
-  background: var(--meteor_gradient);
-  border-radius: 50% 50% 25% 25%;
-  opacity: .7;
-}
-
-@keyframes delay-animation {
-  0% {
-    opacity: 0;
-  }
-  94.99%{
-    opacity: 0;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes meteor {
-  0%
-  {
-      transform: translateY(0%);
-  }
-  100%
-  {
-      transform: translateY(100%);
-  } 
-}
+  -webkit-text-fill-color: transparent;}
