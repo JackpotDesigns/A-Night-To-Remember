@@ -5,11 +5,12 @@
 
   /* Here are the random variables that will get changed in the Javascript file */
 
-  --random_left:0%;
+  --random_left:50%;
   --meteor_hight_cont:1686px;
-  --animation:none;
+  /*//meteor 1s linear infinite normal */
+  --animation:meteor none;
   --meteor_opacity:0.7;
-  --random_rotate:274deg;
+  --random_rotate:0deg;
 } 
 
 
@@ -39,9 +40,11 @@
 
   /* Inherrited 10% from parent */
   width: 10%;
+  height: 100%;
 
   display: flex;
   justify-content: center; 
+
   animation:var(--animation);
  } 
   
@@ -53,6 +56,7 @@
   background: var(--meteor_gradient);
   border-radius: 50% 50% 25% 25%;
   opacity: var(--meteor_opacity);
+  
 }
 
 

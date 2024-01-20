@@ -13,10 +13,11 @@ function random_number(low,high){
     return random_time * 1000;
 }
 
-// Function simulates random time (to shoot meteor)
+// Function simulates random time (to shoot meteor) / anonymous function only shoots once timeout runs out / anon function is a-sync / Doesn't go into loop becuase a-sync
 function random_time(){
     var rand_num = random_number(min_time,max_time);
-    setTimeout(function(){change_meteor_direction();random_time();}, rand_num);
+    setTimeout(function(){change_meteor_direction(); random_time();}, rand_num);
+   
 };
 
 function pause(){
