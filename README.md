@@ -1,6 +1,6 @@
-# :eyes: Jack's Portfolio
+# :eyes: Jack's Night To Remember
 
-![Jack's Night To Remember Preview](https://github.com/JackpotDesigns/bucket_list/blob/main/Night_To_Remember.gif)
+![Jack's Night To Remember Preview](https://github.com/JackpotDesigns/A-Night-To-Remember/blob/main/Night_To_Remember.gif)
 
 ## :white_check_mark: Requirements
 
@@ -13,13 +13,13 @@ Before you begin, ensure you have met the following requirements:
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/JackpotDesigns/Jacks-Portfolio.git
+sudo git clone https://github.com/JackpotDesigns/A-Night-To-Remember.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/JackpotDesigns/Jacks-Portfolio.git
+git clone https://github.com/JackpotDesigns/A-Night-To-Remember.git
 ```
 
 ## :tv: Displaying A Night To Remember 
