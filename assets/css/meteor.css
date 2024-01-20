@@ -4,13 +4,12 @@
   --meteor_gradient:linear-gradient(to top, #fff 0%, transparent 100%);
 
   /* Here are the random variables that will get changed in the Javascript file */
-  --random_top:0;
-  --random_left:0;
-  --random_right:0;
-  --meteor_hight_cont:100%;
+
+  --random_left:0%;
+  --meteor_hight_cont:1686px;
   --animation:none;
-  /* This can be completely random 0 - 360 */
-  --random_rotate:60deg;
+  --meteor_opacity:0.7;
+  --random_rotate:274deg;
 } 
 
 
@@ -18,21 +17,16 @@
 
   /* Absolute so doesn't get in the way */
   position: absolute;
-  left:0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-
-
-  /* Cannot use two seperate transform functions */
+  left:var(--random_left);
   transform: rotate(var(--random_rotate)); 
-
   height: var(--meteor_hight_cont);
+  width: 50%;
+
+  /* These are needed to center the meteor container vertically */
   top:0;
   bottom: 0;
   margin-top: auto;
   margin-bottom: auto;
-  width: 10%;
 
   /* How elements in the container will be treated */
   display: flex;
@@ -58,23 +52,9 @@
   width: 2px;
   background: var(--meteor_gradient);
   border-radius: 50% 50% 25% 25%;
-  opacity: .7;
+  opacity: var(--meteor_opacity);
 }
 
-/* @keyframes delay-animation {
-  0% {
-    opacity: 0;
-  }
-  94.99%{
-    opacity: 0;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
 
 @keyframes meteor {
   0%

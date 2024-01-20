@@ -14,27 +14,20 @@ function random_number(low,high){
 }
 
 // Function simulates random time (to shoot meteor)
-function timer_function(){
-
+function random_time(){
     var rand_num = random_number(min_time,max_time);
-    setTimeout(function(){timer_function();shootMeteor();}, rand_num);
-
+    setTimeout(function(){change_meteor_direction();random_time();}, rand_num);
 };
 
-function shootMeteor(){
-    console.log("Meteor shot");
-
-};
-
+function pause(){
+    setTimeout(function(){turn_off_meteor();} ,950)
+}
 
 // Getting the diagonal of the browser window in pixels 
 function diagonal() { 
     const w = window.outerWidth; 
     const h = window.outerHeight; 
     const d = Math.sqrt(w*w + h*h); 
-    console.log('Width: ' + w); 
-    console.log('Height: ' + h); 
-    console.log('Diagonal: ' + Math.ceil(d)); 
     return d;
   }
 
@@ -45,11 +38,43 @@ function changing_native_variables(selector_name, natvar_name, change_to, metric
     natvar.style.setProperty(natvar_name,change_to+metric)
 }
 
-changing_native_variables('#meteor-cont','--random_rotate',50,'deg')
-changing_native_variables('#meteor-cont','--meteor_hight_cont',diag,'px')
-changing_native_variables('#meteor-ani','--animation','meteor 1s linear infinite normal','')
+// Changing the angle of the metor
+function random_meteor_degree(){
+    const random_degree = Math.floor(Math.random() * 360);
+    return random_degree;
+}
 
+function left_margin_spacing(){
+    const left = Math.floor(Math.random()*50);
+    return left;
+}
 
+// This function will tie all the meteor featuers together
+function change_meteor_direction(){
+    console.log("Made it here lol");
+    changing_native_variables('#meteor-cont','--meteor_hight_cont',diag,'px');
+    changing_native_variables('#meteor-cont','--random_rotate',random_meteor_degree(),'deg');
+    changing_native_variables('#meteor-cont','--random_left',left_margin_spacing(),'%');
+    shoot_meteor();
+}
+
+function shoot_meteor(){
+    changing_native_variables('#meteor-ani','--animation','meteor 1s linear infinite normal','');
+    changing_native_variables('#meteor-cont #meteor','--meteor_opacity','1','');
+    pause();
+}
+
+function turn_off_meteor(){
+    changing_native_variables('#meteor-ani','--animation','none','');
+    changing_native_variables('#meteor-cont #meteor','--meteor_opacity','0','');
+}
+
+function run_meteor(){
+    
+    random_time()
+}
+
+run_meteor()
 
 
 
